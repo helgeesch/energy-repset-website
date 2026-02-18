@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>energy-repset</title>
+    <link rel="icon" type="image/svg+xml" href="https://raw.githubusercontent.com/helgeesch/mesqual/18fe3fc20bace115a116555b2872d57925698e48/assets/logo-turq.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="container">
+            <a href="#" class="nav-logo">
+                <span>energy-repset</span>
+            </a>
+            <div class="nav-links">
+                <a href="#the-problem">The Problem</a>
+                <a href="#framework">Framework</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#modules">Modules</a>
+                <a href="https://energy-repset-docs.mesqual.io" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>Docs</a>
+                <a href="https://github.com/helgeesch/energy-repset" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <h1>A Unified Framework for Representative Subset Selection in Multi-Variate Time-Series Spaces</h1>
+            <div class="hero-pills">
+                <span class="hero-pill">Unified Framework</span>
+                <span class="hero-pill">Fully Modular</span>
+                <span class="hero-pill">Protocol-Based</span>
+            </div>
+            <p class="hero-tagline">Decompose any time-series aggregation method into five interchangeable components. Pick one implementation per pillar, wire them together, and run.</p>
+            <div class="hero-cta">
+                <a href="https://energy-repset-docs.mesqual.io/getting_started/" target="_blank" class="button button-primary button-large">Get Started</a>
+                <a href="https://github.com/helgeesch/energy-repset" target="_blank" class="button button-secondary button-large button-with-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>View on GitHub</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="the-problem" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Why this package?</h2>
+                </div>
+                <div class="problem-content">
+                    <p>Energy system models, capacity expansion studies, and other time-series-heavy applications often need to reduce a full year of hourly data to a small set of representative periods &mdash; days, weeks, or months &mdash; without losing what matters.</p>
+                    <p>The literature offers many methods (k-means, k-medoids, MILP-based selection, genetic algorithms, etc.), but the landscape is dense and tangled: each method bundles multiple decisions &mdash; how to represent data, what to optimize, how to search &mdash; into a single procedure, making it hard to see which choices matter, compare approaches on equal footing, or adapt a method to your specific problem.</p>
+                    <div class="problem-cards">
+                        <div class="problem-card">
+                            <div class="problem-card-header">
+                                <i data-lucide="book-open"></i>
+                                <h3>A Unified Framework</h3>
+                            </div>
+                            <p>Decomposes <em>any</em> time-series aggregation method into five interchangeable components. Every established methodology is a specific instantiation of this structure. The framework provides a common language for describing, comparing, and assembling methods.</p>
+                            <a href="https://energy-repset-docs.mesqual.io/unified_framework/" target="_blank" class="button button-secondary button-small button-with-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>Read the framework paper</a>
+                        </div>
+                        <div class="problem-card">
+                            <div class="problem-card-header">
+                                <i data-lucide="package"></i>
+                                <h3>A Modular Python Package</h3>
+                            </div>
+                            <p>Implements this framework as a library of composable, protocol-based modules. You pick one implementation per component, wire them together, and run. Adding a new algorithm or score metric means implementing a single protocol &mdash; everything else stays the same.</p>
+                            <a href="https://energy-repset-docs.mesqual.io/modules/" target="_blank" class="button button-secondary button-small button-with-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>Browse all modules</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="framework" class="section section-highlight">
+            <div class="container">
+                <div class="section-header">
+                    <h2>The Five Components</h2>
+                    <p>Any time-series aggregation method decomposes into these five pillars. Mix and match implementations to build the exact workflow you need.</p>
+                </div>
+                <div class="components-grid">
+                    <div class="component-card">
+                        <div class="component-symbol">F</div>
+                        <div class="component-body">
+                            <h3>Feature Space</h3>
+                            <p>How raw time-series are transformed into comparable representations</p>
+                        </div>
+                    </div>
+                    <div class="component-card">
+                        <div class="component-symbol">O</div>
+                        <div class="component-body">
+                            <h3>Objective</h3>
+                            <p>How candidate selections are scored for quality</p>
+                        </div>
+                    </div>
+                    <div class="component-card">
+                        <div class="component-symbol">S</div>
+                        <div class="component-body">
+                            <h3>Selection Space</h3>
+                            <p>What is being selected (historical subsets, synthetic archetypes, etc.)</p>
+                        </div>
+                    </div>
+                    <div class="component-card">
+                        <div class="component-symbol">R</div>
+                        <div class="component-body">
+                            <h3>Representation Model</h3>
+                            <p>How selected periods represent the full dataset</p>
+                        </div>
+                    </div>
+                    <div class="component-card">
+                        <div class="component-symbol">A</div>
+                        <div class="component-body">
+                            <h3>Search Algorithm</h3>
+                            <p>The engine that finds optimal selections</p>
+                        </div>
+                    </div>
+                </div>
+                <p class="framework-link-below-grid"><a href="https://energy-repset-docs.mesqual.io/unified_framework/" target="_blank" class="framework-link">Read the full framework paper &rarr;</a></p>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>How It Works</h2>
+                    <p>Define your problem, pick one implementation per component, wire them into a workflow, and run. The result contains the selected periods, their weights, and all objective scores.</p>
+                </div>
+                <div class="code-block">
+                    <div class="code-block-header">
+                        <span class="code-block-label">Quick Start</span>
+                        <a href="https://energy-repset-docs.mesqual.io/getting_started/" target="_blank" class="code-block-link">Full walkthrough &rarr;</a>
+                    </div>
+                    <pre><code id="quickstart-code" class="language-python"></code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section id="modules" class="section section-highlight">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Implemented Modules</h2>
+                    <p>A growing library of composable components. Each implements a protocol &mdash; swap any module without touching the rest of your pipeline.</p>
+                </div>
+                <div class="modules-grid">
+                    <div class="module-card">
+                        <div class="module-header">
+                            <i data-lucide="bar-chart-2"></i>
+                            <h3>Feature Engineering</h3>
+                        </div>
+                        <div class="module-classes">
+                            <code>StandardStatsFeatureEngineer</code>
+                            <code>PCAFeatureEngineer</code>
+                            <code>FeaturePipeline</code>
+                        </div>
+                        <p>Transform raw time-series into statistical summaries, PCA projections, or chained multi-step feature pipelines.</p>
+                        <div class="module-links">
+                            <a href="https://github.com/helgeesch/energy-repset/tree/main/energy_repset/feature_engineering" target="_blank" class="button button-secondary button-small button-with-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>View code</a>
+                            <a href="https://energy-repset-docs.mesqual.io/api/feature_engineering/" target="_blank" class="button button-secondary button-small button-with-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>Docs</a>
+                        </div>
+                    </div>
+                    <div class="module-card">
+                        <div class="module-header">
+                            <i data-lucide="target"></i>
+                            <h3>Score Components</h3>
+                        </div>
+                        <div class="module-classes">
+                            <code>WassersteinFidelity</code>
+                            <code>CorrelationFidelity</code>
+                            <code>DurationCurveFidelity</code>
+                            <code>DiversityReward</code>
+                            <code>...</code>
+                        </div>
+                        <p>Evaluate candidate selections on distribution similarity, correlation preservation, diversity, and more. 10 components and counting.</p>
+                        <div class="module-links">
+                            <a href="https://github.com/helgeesch/energy-repset/tree/main/energy_repset/score_components" target="_blank" class="button button-secondary button-small button-with-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>View code</a>
+                            <a href="https://energy-repset-docs.mesqual.io/api/score_components/" target="_blank" class="button button-secondary button-small button-with-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>Docs</a>
+                        </div>
+                    </div>
+                    <div class="module-card">
+                        <div class="module-header">
+                            <i data-lucide="combine"></i>
+                            <h3>Combination Generators</h3>
+                        </div>
+                        <div class="module-classes">
+                            <code>ExhaustiveCombiGen</code>
+                            <code>GroupQuotaCombiGen</code>
+                            <code>HierarchicalCombiGen</code>
+                        </div>
+                        <p>Define the selection space: enumerate all k-of-n combinations, enforce group quotas (e.g. one per season), or compose hierarchically.</p>
+                        <div class="module-links">
+                            <a href="https://github.com/helgeesch/energy-repset/tree/main/energy_repset/combi_gens" target="_blank" class="button button-secondary button-small button-with-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>View code</a>
+                            <a href="https://energy-repset-docs.mesqual.io/api/combi_gens/" target="_blank" class="button button-secondary button-small button-with-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>Docs</a>
+                        </div>
+                    </div>
+                    <div class="module-card">
+                        <div class="module-header">
+                            <i data-lucide="scale"></i>
+                            <h3>Representation Models</h3>
+                        </div>
+                        <div class="module-classes">
+                            <code>UniformRepresentationModel</code>
+                            <code>KMedoidsClustersizeRepresentation</code>
+                            <code>BlendedRepresentationModel</code>
+                        </div>
+                        <p>Assign responsibility weights: equal 1/k, cluster-membership proportional, or soft blended assignment where every period contributes.</p>
+                        <div class="module-links">
+                            <a href="https://github.com/helgeesch/energy-repset/tree/main/energy_repset/representation" target="_blank" class="button button-secondary button-small button-with-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>View code</a>
+                            <a href="https://energy-repset-docs.mesqual.io/api/representation/" target="_blank" class="button button-secondary button-small button-with-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>Docs</a>
+                        </div>
+                    </div>
+                    <div class="module-card">
+                        <div class="module-header">
+                            <i data-lucide="search"></i>
+                            <h3>Search Algorithms</h3>
+                        </div>
+                        <div class="module-classes">
+                            <code>ObjectiveDrivenCombinatorialSearchAlgorithm</code>
+                            <br>
+                            <code>WeightedSumPolicy</code>
+                            <code>ParetoMaxMinStrategy</code>
+                        </div>
+                        <p>Generate-and-test search with pluggable selection policies: weighted sum, Pareto front, or custom strategies.</p>
+                        <div class="module-links">
+                            <a href="https://github.com/helgeesch/energy-repset/tree/main/energy_repset/search_algorithms" target="_blank" class="button button-secondary button-small button-with-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>View code</a>
+                            <a href="https://energy-repset-docs.mesqual.io/api/search_algorithms/" target="_blank" class="button button-secondary button-small button-with-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>Docs</a>
+                        </div>
+                    </div>
+                    <div class="module-card">
+                        <div class="module-header">
+                            <i data-lucide="line-chart"></i>
+                            <h3>Diagnostics</h3>
+                        </div>
+                        <div class="module-classes">
+                            <code>ResponsibilityBars</code>
+                            <code>FeatureRadar</code>
+                            <code>ScoreHeatmap</code>
+                        </div>
+                        <p>Interactive Plotly visualizations for feature distributions, score comparisons, and responsibility weight analysis.</p>
+                        <div class="module-links">
+                            <a href="https://github.com/helgeesch/energy-repset/tree/main/energy_repset/diagnostics" target="_blank" class="button button-secondary button-small button-with-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>View code</a>
+                            <a href="https://energy-repset-docs.mesqual.io/api/diagnostics/" target="_blank" class="button button-secondary button-small button-with-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>Docs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="examples" class="section">
+            <div class="container">
+                <div class="examples-layout">
+                    <div class="examples-text">
+                        <h3>Explore hands-on examples</h3>
+                        <p>Worked examples showcasing different configurations &mdash; from a minimal "hello world" to multi-objective optimization and hierarchical seasonal workflows.</p>
+                        <a href="https://energy-repset-docs.mesqual.io/gallery/" target="_blank" class="button button-secondary button-small button-with-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>Browse all examples</a>
+                    </div>
+                    <div class="example-cards">
+                        <a href="https://energy-repset-docs.mesqual.io/gallery/ex3/" target="_blank" class="example-card">
+                            <h4>Ex 3: Getting Started</h4>
+                            <p>Minimal end-to-end workflow &mdash; single objective, uniform weights, 4 representative months.</p>
+                        </a>
+                        <a href="https://energy-repset-docs.mesqual.io/gallery/ex1/" target="_blank" class="example-card">
+                            <h4>Ex 1: Feature Space Exploration</h4>
+                            <p>PCA features, Pareto selection, cluster-size weights, and the full suite of diagnostics.</p>
+                        </a>
+                        <a href="https://energy-repset-docs.mesqual.io/gallery/ex2/" target="_blank" class="example-card">
+                            <h4>Ex 2: Hierarchical Selection</h4>
+                            <p>Seasonal constraints via hierarchical combination generation &mdash; one month per season.</p>
+                        </a>
+                        <a href="https://energy-repset-docs.mesqual.io/gallery/ex4/" target="_blank" class="example-card">
+                            <h4>Ex 4: Representation Models</h4>
+                            <p>Same selection, three weight models compared: uniform, cluster-size, and blended.</p>
+                        </a>
+                        <a href="https://energy-repset-docs.mesqual.io/gallery/ex5/" target="_blank" class="example-card">
+                            <h4>Ex 5: Multi-Objective</h4>
+                            <p>Four objectives, Pareto vs. weighted-sum policies &mdash; exploring the trade-off frontier.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-highlight">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Part of the MESQUAL Family</h2>
+                    <p><code>energy-repset</code> is a standalone library within the MESQUAL family &mdash; a collection of open-source tools for energy system analysis, scenario comparison, and modeling support.</p>
+                </div>
+                <div class="projects-grid">
+                    <a href="https://mesqual.io" target="_blank" class="project-card project-card-link">
+                        <i data-lucide="layout-dashboard"></i>
+                        <h4>mesqual</h4>
+                        <p>The Pythonic framework for energy scenario comparison and quantitative analysis.</p>
+                    </a>
+                    <div class="project-card">
+                        <i data-lucide="bot"></i>
+                        <h4>mesqual-ai</h4>
+                        <span class="coming-soon-badge">Coming soon</span>
+                        <p>An extension for AI context, agents and MCPs within the MESQUAL framework.</p>
+                    </div>
+                    <a href="https://github.com/helgeesch/captain-arro" target="_blank" class="project-card project-card-link">
+                        <i data-lucide="arrow-right"></i>
+                        <h4>captain-arro</h4>
+                        <p>Create beautiful, customizable, animated SVG arrows for web interfaces with just a few lines of code.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2026 energy-repset contributors. Licensed under Apache-2.0.</p>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Impressum</a>
+                    <a href="https://www.linkedin.com/in/helge-e-8201041a7/" target="_blank" class="footer-link footer-icon-link" title="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>
