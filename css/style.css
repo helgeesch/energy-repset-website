@@ -1,6 +1,6 @@
 :root {
-    --primary-color: #00A98F;
-    --primary-color-dark: #008f79;
+    --primary-color: #dd6058;
+    --primary-color-dark: #c4433b;
     --background-color: #FFFFFF;
     --section-highlight-bg: #F8F9FA;
     --text-color: #343A40;
@@ -82,7 +82,7 @@ p {
 
 /* --- Hero Section --- */
 .hero {
-    background: linear-gradient(150deg, #e6f9f7, #f0fdfa);
+    background: linear-gradient(150deg, #fde8e7, #fef2f1);
     padding: 80px 0;
     text-align: center;
 }
@@ -105,8 +105,8 @@ h1 {
     font-size: 0.875rem;
     font-weight: 500;
     color: var(--primary-color-dark);
-    background: rgba(0, 169, 143, 0.08);
-    border: 1px solid rgba(0, 169, 143, 0.25);
+    background: rgba(221, 96, 88, 0.08);
+    border: 1px solid rgba(221, 96, 88, 0.25);
     border-radius: 20px;
     letter-spacing: 0.01em;
 }
@@ -140,12 +140,12 @@ h1 {
 .button-primary {
     background-color: var(--primary-color);
     color: white;
-    box-shadow: 0 2px 4px rgba(0, 169, 143, 0.2);
+    box-shadow: 0 2px 4px rgba(221, 96, 88, 0.2);
 }
 .button-primary:hover {
     background-color: var(--primary-color-dark);
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 169, 143, 0.2);
+    box-shadow: 0 4px 8px rgba(221, 96, 88, 0.2);
 }
 .button-secondary {
     background-color: transparent;
@@ -249,8 +249,8 @@ h1 {
     width: 52px;
     height: 52px;
     border-radius: 12px;
-    background: rgba(0, 169, 143, 0.08);
-    border: 2px solid rgba(0, 169, 143, 0.25);
+    background: rgba(221, 96, 88, 0.08);
+    border: 2px solid rgba(221, 96, 88, 0.25);
     color: var(--primary-color-dark);
     font-size: 1.5rem;
     font-weight: 700;
@@ -297,7 +297,7 @@ h1 {
     transition: color 0.2s;
 }
 .code-block-link:hover {
-    color: #7dd3c7;
+    color: #f5a09a;
 }
 .code-block pre {
     margin: 0;
@@ -498,8 +498,8 @@ code.typing::after {
     font-size: 0.7rem;
     font-weight: 600;
     color: var(--primary-color-dark);
-    background: rgba(0, 169, 143, 0.1);
-    border: 1px solid rgba(0, 169, 143, 0.3);
+    background: rgba(221, 96, 88, 0.1);
+    border: 1px solid rgba(221, 96, 88, 0.3);
     border-radius: 12px;
     letter-spacing: 0.03em;
     text-transform: uppercase;
