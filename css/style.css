@@ -83,7 +83,7 @@ p {
 /* --- Hero Section --- */
 .hero {
     background: linear-gradient(150deg, #fde8e7, #fef2f1);
-    padding: 80px 0;
+    padding: 60px 0;
     text-align: center;
 }
 h1 {
@@ -113,10 +113,124 @@ h1 {
 .hero-tagline {
     font-size: 1.05rem;
     max-width: 650px;
-    margin: 0 auto 40px;
+    margin: 0 auto 0;
     color: var(--text-color-light);
     font-weight: 400;
 }
+
+/* --- Hero Visualization --- */
+.hero-viz-wrapper {
+    max-width: 900px;
+    margin: 32px auto 36px;
+}
+.hero-viz {
+    width: 100%;
+    height: auto;
+    display: block;
+    font-family: var(--font-family);
+}
+
+/* Initial (pre-animation) states */
+.viz-ts {
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path 2.7s cubic-bezier(0.25, 0.1, 0.25, 1);
+    will-change: clip-path;
+}
+.viz-labels, .viz-legend {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+.month-label {
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+.viz-scan {
+    opacity: 0;
+}
+.dim-overlay {
+    fill: rgba(255, 255, 255, 0.6);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+.highlight-overlay {
+    fill: rgba(221, 96, 88, 0.08);
+    stroke: rgba(221, 96, 88, 0.35);
+    stroke-width: 1.5;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+.weight-badge {
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: center center;
+    transform-box: fill-box;
+    transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Phase 1: Lines draw in (triggered by .animate) */
+.hero-viz.animate .viz-ts-solar { clip-path: inset(0 0% 0 0); transition-delay: 0.3s; }
+.hero-viz.animate .viz-ts-wind  { clip-path: inset(0 0% 0 0); transition-delay: 0.45s; }
+.hero-viz.animate .viz-ts-load  { clip-path: inset(0 0% 0 0); transition-delay: 0.6s; }
+
+/* Phase 2: Labels + Legend (triggered by .phase-labels) */
+.hero-viz.phase-labels .viz-labels { opacity: 1; }
+.hero-viz.phase-labels .viz-legend { opacity: 1; }
+.hero-viz.phase-labels .month-label { opacity: 1; }
+.hero-viz.phase-labels .month-label:nth-child(1)  { transition-delay: 0ms; }
+.hero-viz.phase-labels .month-label:nth-child(2)  { transition-delay: 50ms; }
+.hero-viz.phase-labels .month-label:nth-child(3)  { transition-delay: 100ms; }
+.hero-viz.phase-labels .month-label:nth-child(4)  { transition-delay: 150ms; }
+.hero-viz.phase-labels .month-label:nth-child(5)  { transition-delay: 200ms; }
+.hero-viz.phase-labels .month-label:nth-child(6)  { transition-delay: 250ms; }
+.hero-viz.phase-labels .month-label:nth-child(7)  { transition-delay: 300ms; }
+.hero-viz.phase-labels .month-label:nth-child(8)  { transition-delay: 350ms; }
+.hero-viz.phase-labels .month-label:nth-child(9)  { transition-delay: 400ms; }
+.hero-viz.phase-labels .month-label:nth-child(10) { transition-delay: 450ms; }
+.hero-viz.phase-labels .month-label:nth-child(11) { transition-delay: 500ms; }
+.hero-viz.phase-labels .month-label:nth-child(12) { transition-delay: 550ms; }
+
+/* Phase 3: Scan line sweep (triggered by .phase-scan) */
+@keyframes viz-scan-sweep {
+    0%  { opacity: 0.6; transform: translateX(0); }
+    90% { opacity: 0.6; }
+    100% { opacity: 0; transform: translateX(810px); }
+}
+.hero-viz.phase-scan .viz-scan {
+    animation: viz-scan-sweep 0.8s ease-in-out forwards;
+}
+
+/* Phase 4: Selection highlights (triggered by .phase-select) */
+.hero-viz.phase-select .highlight-overlay { opacity: 1; }
+
+/* Phase 5: Weight badges pop in (triggered by .phase-weights) */
+.hero-viz.phase-weights .weight-badge { opacity: 1; transform: scale(1); }
+.hero-viz.phase-weights .weight-badge[data-idx="0"] { transition-delay: 0ms; }
+.hero-viz.phase-weights .weight-badge[data-idx="1"] { transition-delay: 120ms; }
+.hero-viz.phase-weights .weight-badge[data-idx="2"] { transition-delay: 240ms; }
+.hero-viz.phase-weights .weight-badge[data-idx="3"] { transition-delay: 360ms; }
+
+/* Accessibility: skip animations for reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .viz-ts {
+        clip-path: inset(0 0% 0 0) !important;
+        transition: none !important;
+    }
+    .viz-labels, .viz-legend, .month-label {
+        opacity: 1 !important;
+        transition: none !important;
+    }
+    .highlight-overlay {
+        opacity: 1 !important;
+        transition: none !important;
+    }
+    .weight-badge {
+        opacity: 1 !important;
+        transform: scale(1) !important;
+        transition: none !important;
+    }
+    .viz-scan { display: none !important; }
+}
+
 .hero-cta {
     display: flex;
     justify-content: center;
@@ -568,9 +682,10 @@ footer {
 @media (max-width: 768px) {
     h1 { font-size: 2rem; }
     .nav-links { display: none; }
-    .hero { padding: 60px 0; }
+    .hero { padding: 40px 0; }
     .section { padding: 60px 0; }
     .section-header h2 { font-size: 2rem; }
+    .hero-viz-wrapper { margin: 24px auto 28px; }
     .components-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -588,6 +703,10 @@ footer {
     .projects-grid {
         grid-template-columns: 1fr;
     }
+}
+
+@media (max-width: 576px) {
+    .viz-legend { display: none; }
 }
 
 @media (max-width: 480px) {

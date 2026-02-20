@@ -170,4 +170,24 @@ print(result.scores)     # e.g., {'wasserstein': 0.023, 'correlation': 0.015}`;
 
         observer.observe(codeEl.closest('.code-block'));
     }
+
+    // --- Hero visualization animation ---
+    const heroViz = document.querySelector('.hero-viz');
+    if (heroViz) {
+        let hasAnimatedViz = false;
+        const vizObserver = new IntersectionObserver((entries) => {
+            for (const entry of entries) {
+                if (entry.isIntersecting && !hasAnimatedViz) {
+                    hasAnimatedViz = true;
+                    heroViz.classList.add('animate');
+                    setTimeout(() => heroViz.classList.add('phase-labels'), 1800);
+                    setTimeout(() => heroViz.classList.add('phase-scan'), 2800);
+                    setTimeout(() => heroViz.classList.add('phase-select'), 3500);
+                    setTimeout(() => heroViz.classList.add('phase-weights'), 4500);
+                    vizObserver.disconnect();
+                }
+            }
+        }, { threshold: 0.3 });
+        vizObserver.observe(heroViz);
+    }
 });
