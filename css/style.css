@@ -646,14 +646,14 @@ code.typing::after {
     color: var(--primary-color);
     text-decoration: none;
     padding: 5px 12px;
-    background: rgba(221, 96, 88, 0.1);
-    border: 1px solid rgba(221, 96, 88, 0.3);
+    background: rgba(221, 96, 88, 0.06);
+    border: 1px solid rgba(221, 96, 88, 0.2);
     border-radius: 8px;
     transition: all 0.2s;
 }
 .project-highlight-link a:hover {
-    background: rgba(221, 96, 88, 0.1);
-    border: 1px solid rgba(221, 96, 88, 0.3);
+    background: rgba(221, 96, 88, 0.12);
+    border: 1px solid rgba(221, 96, 88, 0.35);
 }
 .project-highlight-link a svg {
     flex-shrink: 0;
@@ -688,8 +688,8 @@ code.typing::after {
     font-size: 0.65rem;
     font-weight: 600;
     color: var(--primary-color-dark);
-    background: rgba(221, 96, 88, 0.1);
-    border: 1px solid rgba(221, 96, 88, 0.3);
+    background: rgba(221, 96, 88, 0.06);
+    border: 1px solid rgba(221, 96, 88, 0.2);
     border-radius: 10px;
     letter-spacing: 0.03em;
     text-transform: uppercase;
