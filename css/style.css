@@ -568,56 +568,180 @@ code.typing::after {
     line-height: 1.5;
 }
 
-/* --- Projects / MESQUAL Family Section --- */
+/* --- Project Family Section --- */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    text-align: center;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
 }
 .project-card {
     background: #fff;
-    padding: 30px;
-    border-radius: 8px;
     border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 28px;
     transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
     position: relative;
-}
-.project-card i {
-    color: var(--primary-color);
-    margin-bottom: 15px;
-}
-.project-card h4 {
-    margin-top: 0;
-    margin-bottom: 10px;
-    font-size: 1.1rem;
-}
-.project-card p {
-    font-size: 0.9rem;
-    margin-bottom: 0;
-}
-.project-card-link {
-    text-decoration: none;
-    color: inherit;
     cursor: pointer;
 }
-.project-card-link:hover {
+.project-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--card-shadow);
     border-color: #ccc;
 }
+.project-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+.project-header h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    font-family: 'SF Mono', 'Fira Code', 'Menlo', monospace;
+}
+.project-badge {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-color-light);
+    background: var(--section-highlight-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2px 10px;
+}
+.project-card > p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0 0 16px;
+    flex: 1;
+}
+.project-card-link {
+    color: inherit;
+    text-decoration: none;
+}
+.project-card-link::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px;
+}
+.project-logo {
+    flex-shrink: 0;
+}
+.project-highlight-link {
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+}
+.project-highlight-link a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    text-decoration: none;
+    padding: 5px 12px;
+    background: rgba(221, 96, 88, 0.1);
+    border: 1px solid rgba(221, 96, 88, 0.3);
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+.project-highlight-link a:hover {
+    background: rgba(221, 96, 88, 0.1);
+    border: 1px solid rgba(221, 96, 88, 0.3);
+}
+.project-highlight-link a svg {
+    flex-shrink: 0;
+}
+.project-ecosystem {
+    margin-bottom: 18px;
+    line-height: 2;
+    position: relative;
+    z-index: 1;
+}
+.project-ecosystem code {
+    background: var(--section-highlight-bg);
+    border-radius: 5px;
+    padding: 3px 8px;
+    font-size: 0.8rem;
+    color: var(--text-color);
+    white-space: nowrap;
+    margin-right: 4px;
+    transition: all 0.2s;
+}
+.ecosystem-link {
+    text-decoration: none;
+    color: inherit;
+}
+.ecosystem-link:hover code {
+    background: rgba(221, 96, 88, 0.12);
+    color: var(--primary-color-dark);
+}
 .coming-soon-badge {
     display: inline-block;
-    padding: 3px 10px;
-    font-size: 0.7rem;
+    padding: 2px 8px;
+    font-size: 0.65rem;
     font-weight: 600;
     color: var(--primary-color-dark);
     background: rgba(221, 96, 88, 0.1);
     border: 1px solid rgba(221, 96, 88, 0.3);
-    border-radius: 12px;
+    border-radius: 10px;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-    margin-bottom: 8px;
+    vertical-align: middle;
+}
+.project-arrow-demo {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 16px;
+    padding: 8px 0;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.02);
+    overflow: hidden;
+}
+.project-arrow-demo object {
+    height: 56px;
+    width: auto;
+}
+.project-links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-color);
+    position: relative;
+    z-index: 1;
+}
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color-light);
+    text-decoration: none;
+    padding: 6px;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+.project-link:hover {
+    color: var(--primary-color);
+    background: rgba(221, 96, 88, 0.06);
+}
+.project-link img {
+    display: block;
+}
+.author-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+.author-link:hover {
+    text-decoration: underline;
 }
 
 /* --- Footer --- */
